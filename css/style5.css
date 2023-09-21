@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;	
+	margin: 0;
+	color: #043339;
+	font-size: 1em;
+	font-family: 'Croissant One', cursive;
+}
+
+.main {
+	display: flex;
+	/*flex: 1;*/
+	flex-direction: column;
+}
+
+.main > * {
+	padding: 10px;
+}
+
+.main > .container {
+	order: 1;
+	background-color: #BFAE87;
+}
+
+.main h2 {
+	display: block;
+	background-color: #77636E;
+	color: white;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 5px;
+}
+
+.main img {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+	padding: 5px;
+	background-color: white;
+	text-align: center;
+}
+
+.main article {
+	background-color: #CACAAA;
+	order: 2;
+}
+
+.main > aside {
+	background-color: #C8AB83;
+	order: 3;
+}
+
+.header, .footer {
+	background-color: #7F636E;
+}
+
+.logo {
+	font-size: 1.3em;
+	padding: 8px;
+}
+
+.logo a {
+	text-decoration: none;
+}
+
+.subz > a::after {
+	content: "\2195";
+	padding-left: 5px;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.navbar, .subNav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.subNav {
+	display: none;
+}
+
+/*Will show up(with the help of js)*/
+.sactive .subNav {
+	display: block;
+}
+
+.sactive {
+	background-color: #EEC584;
+}
+
+.sactive > a {
+	background-color: coral;
+	color: white;
+}
+
+.navbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;/*aligns items vertically in center*/
+	justify-content: space-between;/*adds some space between items*/
+}
+
+.navItem {
+	padding: 10px;
+	text-align: center;
+	width: 100%;/*for mobile 1st*/
+	display: none;/*hiding menu for mobile screens*/
+	order: 3;
+}
+
+.toggle {
+	font-size: 1.8em;
+	padding: 10px;
+	order: 1;
+}
+
+.active .navItem {
+	display: block; /*Will show up(with the help of js)*/
+}
+
+.navItem a {
+	display: block;
+	padding: 10px 5px;
+	text-decoration: none;
+}
+
+.navItem a:hover {
+	background-color: black;
+	color: white;
+}
+
+.footer {
+	min-height: 200px;
+	padding: 20px;
+	text-align: center;
+	background-color: #4E3A45;
+	color: white;
+}
+
+
+@media all and (min-width:960px)/*Big size screens*/ {
+
+	.main {
+		flex: 1;
+		flex-direction: row;
+	}
+
+	.main > .container {
+	flex: 1;
+	order: 1;
+	background-color: #EEC584;
+	}
+
+	.main > article,
+	.main > aside {
+	flex: 0 0 20vw;
+	}
+	
+	.sactive .subNav {
+	display: block; /*Will show up(with the help of js)*/
+    }
+
+	.navItem {
+		position: relative;
+		display: block;/*On big screen size menu will show up*/
+		width: auto;
+		order: 1;
+	}
+
+	.navbar {
+		align-items: flex-start;
+		flex-wrap: nowrap;
+	}
+
+	.sactive .subNav {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 60px;
+	background-color: black;
+	text-align: left;
+	min-width: 120px;
+	}
+
+	.subNav a {
+	color: white;
+	}
+
+	.toggle {
+		display: none;
+		flex: 1;
+		text-align: right;
+	}
+
+	.logo {
+		flex: 1;
+		order: 0;
+	}
+}
+
